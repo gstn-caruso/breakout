@@ -15,4 +15,10 @@ public class PlayerController : MonoBehaviour
 	private void Update () {
 		_rb.velocity = new Vector3(Input.GetAxis("Horizontal") * Velocidad, 0);
 	}
+	
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.CompareTag("Ball"))
+			GetComponent<AudioSource>().Play();
+	}
 }

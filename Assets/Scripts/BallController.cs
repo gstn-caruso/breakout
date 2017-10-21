@@ -18,6 +18,7 @@ public class BallController : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
+		Velocidad += 0.02f;
 		if (other.gameObject.CompareTag("Player"))
 		{
 			var paddleX = other.transform.position.x;
